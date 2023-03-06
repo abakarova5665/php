@@ -14,7 +14,9 @@ $db = $database->getConnection();
 
 $user = new User($db);
 
-$city->id = $_POST['id'];
+if (!empty($_POST['id'])){
+    $user->id = $_POST['id'];
+
 
 
 
@@ -27,3 +29,5 @@ $city->id = $_POST['id'];
 
         echo json_encode(["message" => "Невозможно удалить пользователя."]);
     }
+
+}
